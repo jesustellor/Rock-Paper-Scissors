@@ -11,7 +11,8 @@
 // This listener waits for the HTML elements to exist
 document.addEventListener("DOMContentLoaded", () => {
     const gameForm = document.getElementById("form");
-    const checkContainer = document.getElementById("container");
+    const checkContainer = document.getElementById("question");
+    console.log(gameForm);
     // Add a safety check to ensure gameForm was actually found
     if (gameForm) {
         gameForm.addEventListener("submit", (event) => {
@@ -20,14 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
             const vsPC = document.getElementById("checkbox1");
             const vsPlayer = document.getElementById("checkbox2");
 
-            if (vsPC.checked) {
-                console.log("1 vs PC mode activated");
+            const gameOn = document.getElementById("game");
+
+            const player1Choice = document.getElementById("player1-choice");
+            const player2Choice = document.getElementById("player2-choice");
+            const computerChoice = document.getElementById("computer-choice");
+            const resultText = document.getElementById("result-text");
+
+            if (vsPC.checked || vsPlayer.checked) {
+                console.log("Game mode activated");
                 checkContainer.hidden = true;
-            } else if (vsPlayer.checked) {
-                console.log("1 vs 1 mode activated");
+                gameOn.hidden = false;
+                  if(vsPC.checked){
+                    console.log("vs PC");
+                    gameOn.children[1].hidden = false;
+                    let player1Choice = game.addEventListener("click", () => {
+                        let choice = event
+                        console.log(choice);
+                    })
+
+                  }else if(vsPlayer.checked){
+                    console.log("vs Player");
+                  }
+                
             } else {
                 console.log("Please select a game mode first.");
             }
         });
+    } else {
+        console.log("Game form not found.");
     }
 });

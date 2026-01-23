@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="container">
+    <div id="question">
         <h1>ROCK PAPER SCISSORS</h1>
         <p>Who is Playing</p>
         <form id="form">
@@ -18,8 +18,24 @@
         <label for="checkbox2">1 vs 1</label>
         <button type="submit">Submit</button>
         </form>
-
-
+    </div>
+    <div hidden id="game">
+        <h1>Game On</h1>
+        <p hidden>Pick your weapon Player 1</p>
+        <p hidden>Pick your weapon Player 2</p>
+        <div class="choices">
+            <form id="game-form">
+            <button value="Rock" id="rock">Rock</button>
+            <button value="Paper" id="paper">Paper</button>
+            <button value="Scissors" id="scissors">Scissors</button>
+            </form>1
+        </div>
+        <div class="result">
+            <p hidden>Player one picked: <span id="player1-choice"></span></p>
+            <p hidden>Player two picked: <span id="player2-choice"></span></p>
+            <p hidden>Computer's choice: <span id="computer-choice"></span></p>
+            <p>Result: <span id="result-text"></span></p>
+        </div>
     </div>
 </body>
 </html>
