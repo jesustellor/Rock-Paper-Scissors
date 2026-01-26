@@ -1,18 +1,11 @@
-// psudo code to building a rock paper scissors game
-
-
 // first i need to check how many people are playing if 1 vs pc or 1 v 1
-// if 1 vs pc then the pc will be the computer
-// if 1 vs 1 then the players will be player1 and player2 respectively
+// create all necessary variables, computer choice, player 1 choice, player 2 choice
+// if 1 vs pc only ask for player 1 choice.
+// if 1 vs 1 ask for player 1 and player 2 choices.
 // player one and player 2 will have to pick from rock paper scissors
 // the decision is then compared to see who wins.
 // print out the winner
-//            const player1Choice = document.getElementById("player1-choice");
-//            const player2Choice = document.getElementById("player2-choice");
-//            const computerChoice = document.getElementById("computer-choice");
-//            const resultText = document.getElementById("result-text");
 
-// This listener waits for the HTML elements to exist
 document.addEventListener("DOMContentLoaded", () => {
     const gameForm = document.getElementById("form");
     const checkContainer = document.getElementById("question");
