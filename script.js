@@ -7,26 +7,45 @@
 // player one and player 2 will have to pick from rock paper scissors
 // the decision is then compared to see who wins.
 // print out the winner
+//            const player1Choice = document.getElementById("player1-choice");
+//            const player2Choice = document.getElementById("player2-choice");
+//            const computerChoice = document.getElementById("computer-choice");
+//            const resultText = document.getElementById("result-text");
 
 // This listener waits for the HTML elements to exist
 document.addEventListener("DOMContentLoaded", () => {
     const gameForm = document.getElementById("form");
     const checkContainer = document.getElementById("question");
+    const gameContainer = document.getElementById("game");
+    const gameOn = document.getElementById("game");
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     console.log(gameForm);
     // Add a safety check to ensure gameForm was actually found
     if (gameForm) {
+        gameContainer.addEventListener("click", (event) => {
+            event.preventDefault();
+            if(event.target.value){
+                const player1Choice = event.target.value;
+
+                console.log(player1Choice);
+            }
+        });
+
+        let pcGame = function(){
+            gameOn.children[1].hidden = false;
+        }
+
+        let vsGame = function(){
+            
+        }
+
         gameForm.addEventListener("submit", (event) => {
             event.preventDefault();
             
             const vsPC = document.getElementById("checkbox1");
             const vsPlayer = document.getElementById("checkbox2");
 
-            const gameOn = document.getElementById("game");
 
-            const player1Choice = document.getElementById("player1-choice");
-            const player2Choice = document.getElementById("player2-choice");
-            const computerChoice = document.getElementById("computer-choice");
-            const resultText = document.getElementById("result-text");
 
             if (vsPC.checked || vsPlayer.checked) {
                 console.log("Game mode activated");
@@ -34,14 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 gameOn.hidden = false;
                   if(vsPC.checked){
                     console.log("vs PC");
-                    gameOn.children[1].hidden = false;
-                    let player1Choice = game.addEventListener("click", () => {
-                        let choice = event
-                        console.log(choice);
-                    })
+                    pcGame();
 
                   }else if(vsPlayer.checked){
                     console.log("vs Player");
+                    gameOn.children[1].hidden = false;
                   }
                 
             } else {
