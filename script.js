@@ -6,16 +6,19 @@
 // the decision is then compared to see who wins.
 // print out the winner
 
+/*  */
 document.addEventListener("DOMContentLoaded", () => {
-    const gameForm = document.getElementById("form");
     const checkContainer = document.getElementById("question");
-    const gameContainer = document.getElementById("game");
+    const gameForm = document.getElementById("form");
     const gameOn = document.getElementById("game");
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(gameForm);
+   
     // Add a safety check to ensure gameForm was actually found
     if (gameForm) {
-        gameContainer.addEventListener("click", (event) => {
+
+
+        let pcGame = function(){
+            gameOn.addEventListener("click", (event) => {
             event.preventDefault();
             if(event.target.value){
                 const player1Choice = event.target.value;
@@ -24,13 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        let pcGame = function(){
-            gameOn.children[1].hidden = false;
         }
 
-        let vsGame = function(){
-            
-        }
 
         gameForm.addEventListener("submit", (event) => {
             event.preventDefault();
@@ -46,11 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 gameOn.hidden = false;
                   if(vsPC.checked){
                     console.log("vs PC");
+
+                    gameOn.children[1].hidden = false;
                     pcGame();
 
                   }else if(vsPlayer.checked){
                     console.log("vs Player");
-                    gameOn.children[1].hidden = false;
                   }
                 
             } else {
