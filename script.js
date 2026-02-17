@@ -15,21 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
     // Add a safety check to ensure gameForm was actually found
     if (gameForm) {
-
-
-        let pcGame = function(){
-            gameOn.addEventListener("click", (event) => {
-            event.preventDefault();
-            if(event.target.value){
-                const player1Choice = event.target.value;
-
-                console.log(player1Choice);
-            }
-        });
-
-        }
-
-
+        
         gameForm.addEventListener("submit", (event) => {
             event.preventDefault();
             
@@ -56,6 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Please select a game mode first.");
             }
         });
+
+        let pcGame = function(){
+            gameOn.addEventListener("click", (event) => {
+            event.preventDefault();
+            if(event.target.value){
+                const player1Choice = event.target.value;
+
+                console.log(player1Choice);
+            }
+        });
+
+        }
+
+
+
     } else {
         console.log("Game form not found.");
     }
