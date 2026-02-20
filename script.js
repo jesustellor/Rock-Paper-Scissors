@@ -8,10 +8,9 @@
 
 /*  */
 document.addEventListener("DOMContentLoaded", () => {
-    const checkContainer = document.getElementById("question");
     const gameForm = document.getElementById("form");
-    const gameOn = document.getElementById("game");
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    const gameinit = document.getElementById("game");
+    const questionContainer = document.getElementById("question");
    
     // Add a safety check to ensure gameForm was actually found
     if (gameForm) {
@@ -26,12 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (vsPC.checked || vsPlayer.checked) {
                 console.log("Game mode activated");
-                checkContainer.hidden = true;
-                gameOn.hidden = false;
+                questionContainer.hidden = true;
+                gameInit.hidden = false;
                   if(vsPC.checked){
                     console.log("vs PC");
 
-                    gameOn.children[1].hidden = false;
                     pcGame();
 
                   }else if(vsPlayer.checked){
