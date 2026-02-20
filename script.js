@@ -9,7 +9,7 @@
 /*  */
 document.addEventListener("DOMContentLoaded", () => {
     const gameForm = document.getElementById("form");
-    const gameinit = document.getElementById("game");
+    const gameInit = document.getElementById("game");
     const questionContainer = document.getElementById("question");
    
     // Add a safety check to ensure gameForm was actually found
