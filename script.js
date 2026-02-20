@@ -49,6 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
             player1Score.innerHTML = 0;
             player2Score.innerHTML = 0; 
 
+// Time complexity: O(1)
+        // the function registers an event listener and the inner logic performs a set number if else per click.
+        // the number of operations does not grow with input size.
+// Space complexity: O(1)
+        // the function uses a constant amount of memory regardless of the input size or how many times the game is played.
+
         let pcGame = function(){
             gameInit.addEventListener("click", (event) => {
             let computerChoice = Math.floor(Math.random() * 3);
