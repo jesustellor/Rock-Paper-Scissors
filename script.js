@@ -7,6 +7,7 @@
 // print out the winner
 
 /*  */
+
 document.addEventListener("DOMContentLoaded", () => {
     const gameForm = document.getElementById("form");
     const gameInit = document.getElementById("game");
@@ -41,14 +42,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        let pcGame = function(){
-            gameOn.addEventListener("click", (event) => {
-            event.preventDefault();
-            if(event.target.value){
-                const player1Choice = event.target.value;
+// 0 = rock, 1 = paper, 2 = scissors 
+            let player1Score = document.getElementById("player1-score");
+            let player2Score = document.getElementById("player2-score");
 
-                console.log(player1Choice);
-            }
+            player1Score.innerHTML = 0;
+            player2Score.innerHTML = 0; 
+
+        let pcGame = function(){
+            gameInit.addEventListener("click", (event) => {
+            let computerChoice = Math.floor(Math.random() * 3);
+
+
+            event.preventDefault();
+            console.log(event.target.value);
+            console.log(computerChoice);
+
+            if(event.target.value == "Rock" && computerChoice == 1){
+                console.log("Player 2 wins");
+                player2Score.innerHTML++;
+            } else if(event.target.value == "Paper" && computerChoice == 2){
+                console.log("Player 2 wins");
+                player2Score.innerHTML++;
+            } else if(event.target.value == "Scissors" && computerChoice == 0){
+                console.log("Player 2 wins");
+                player2Score.innerHTML++;
+            } else if(event.target.value == "Rock" && computerChoice == 2){
+                console.log("Player 1 wins");
+                player1Score.innerHTML++;
+            } else if(event.target.value == "Paper" && computerChoice == 0){
+                console.log("Player 1 wins");
+                player1Score.innerHTML++;
+            } else if(event.target.value == "Scissors" && computerChoice == 1){
+                console.log("Player 1 wins");
+                player1Score.innerHTML++;
+            } else{
+                console.log("Draw");
+            } 
         });
 
         }
